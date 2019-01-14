@@ -51,10 +51,8 @@ export default {
           this.$axios.post("login", this.formData).then(res => {
             if (res.data.meta.status === 400) {
               //错误
-              this.$message.error(res.data.meta.msg);
             } else if (res.data.meta.status == 200) {
               //正确
-              this.$message.success(res.data.meta.msg);
               //保存token sessionStorage
               window.sessionStorage.setItem('token',res.data.data.token);
               //去首页

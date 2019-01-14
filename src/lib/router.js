@@ -9,15 +9,21 @@ Vue.use(VueRouter);
 import login from '../components/login.vue';
 import main from '../components/main.vue';
 
+//导入嵌套组件
+import user from '../components/user.vue';
+
 //写路由规则
-let routes = [
-    {
-        path:'/',
-        component:main
+let routes = [{
+        path: '/',
+        component: main,
+        children: [{
+            path: 'users',
+            component: user
+        }]
     },
     {
-        path:'/login',
-        component:login
+        path: '/login',
+        component: login
     }
 ]
 
